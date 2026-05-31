@@ -1,0 +1,139 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  background:
+    radial-gradient(circle at 18% 12%, rgba(32, 246, 255, 0.16), transparent 28rem),
+    radial-gradient(circle at 92% 16%, rgba(66, 255, 191, 0.12), transparent 24rem),
+    linear-gradient(135deg, #05070c 0%, #090d14 52%, #030409 100%);
+}
+
+.glass-panel {
+  border: 1px solid rgba(148, 163, 184, 0.16);
+  background:
+    linear-gradient(145deg, rgba(15, 23, 42, 0.76), rgba(2, 6, 23, 0.42)),
+    rgba(15, 23, 42, 0.38);
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.34);
+  backdrop-filter: blur(22px);
+}
+
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(32, 246, 255, 0.08) 50%,
+    transparent 100%
+  );
+  animation: scan 4.8s linear infinite;
+}
+
+@keyframes scan {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100%);
+  }
+}
+
+.leaflet-container {
+  min-height: 100%;
+  background: #07111a;
+  font-family: inherit;
+}
+
+.leaflet-control-attribution,
+.leaflet-control-zoom {
+  display: none;
+}
+
+.drone-marker {
+  width: 28px;
+  height: 28px;
+  border-radius: 999px;
+  background: rgba(32, 246, 255, 0.16);
+  border: 1px solid rgba(32, 246, 255, 0.72);
+  box-shadow: 0 0 26px rgba(32, 246, 255, 0.75);
+}
+
+.drone-marker::before {
+  position: absolute;
+  inset: 7px;
+  content: "";
+  border-radius: 999px;
+  background: #20f6ff;
+}
+
+.waypoint-marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 999px;
+  background: #42ffbf;
+  border: 2px solid rgba(6, 7, 11, 0.9);
+  box-shadow: 0 0 16px rgba(66, 255, 191, 0.7);
+}
+
+.mission-path {
+  stroke: #9fb4ef;
+  stroke-width: 8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  filter: drop-shadow(0 0 8px rgba(159, 180, 239, 0.45));
+  stroke-dasharray: 16 8;
+  animation: route-flow 7s linear infinite;
+}
+
+.no-fly-zone {
+  fill: rgba(255, 83, 83, 0.13);
+  stroke: rgba(255, 132, 132, 0.64);
+  stroke-width: 2;
+  stroke-dasharray: 10 8;
+}
+
+.obstacle-zone {
+  fill: rgba(243, 163, 111, 0.13);
+  stroke: rgba(243, 163, 111, 0.7);
+  stroke-width: 2;
+  stroke-dasharray: 6 7;
+}
+
+@keyframes route-flow {
+  to {
+    stroke-dashoffset: -180;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
