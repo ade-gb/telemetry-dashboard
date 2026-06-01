@@ -1,12 +1,12 @@
 # Telemetry Dashboard
 
-A professional Kopter-style drone operations platform built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and Recharts.
+A professional Kopter style drone operations platform built with Next.js, TypeScript, Tailwind CSS, Framer Motion, and Recharts.
 
 The app simulates a cinematic dark mission-control interface for drone operators, with real-time telemetry, mission planning, flight replay, route analytics, alerting, and local mission history.
 
 ## Features
 
-- Real-time mock drone telemetry for altitude, speed, battery, GPS, signal strength, temperature, and flight mode
+- Real time mock drone telemetry for altitude, speed, battery, GPS, signal strength, temperature, and flight mode
 - Kopter-inspired route planning interface with dark glass panels and high-contrast mission controls
 - Interactive waypoint creation by clicking the mission map
 - Draggable waypoints with reorder controls and delete actions
@@ -19,7 +19,7 @@ The app simulates a cinematic dark mission-control interface for drone operators
 - Simulated FPV camera panel with telemetry overlay
 - Flight analytics charts for battery, altitude, speed, and signal quality
 - Working navigation pages for Dashboard/Overview, Routes, Logbook, Missions-style history, Drone Settings/Options, and Help
-- Responsive high-tech UI designed for professional drone operations workflows
+- Responsive high tech UI designed for professional drone operations workflows
 
 ## Tech Stack
 
